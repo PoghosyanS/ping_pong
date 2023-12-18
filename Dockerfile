@@ -2,14 +2,16 @@ FROM node:14-alpine
 
 RUN adduser -D myuser
 
-USER myuser
-
 WORKDIR /app
 
-COPY package.json app.js ./
+COPY --chown=myuser:myuser package.json ./src/app.js webpack.config.js ./
 
 RUN npm install 
 
+RUN npm run build
+
 EXPOSE 3000
+
+USER myuser
 
 CMD ["node", "app.js"]
