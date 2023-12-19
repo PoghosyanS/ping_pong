@@ -8,7 +8,7 @@ COPY --chown=myuser:myuser package.json ./src/app.js webpack.config.js ./
 
 RUN npm install 
 
-RUN npm run build
+RUN npm build
 
 EXPOSE 3000
 
