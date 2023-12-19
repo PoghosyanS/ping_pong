@@ -4,7 +4,7 @@ RUN adduser -D myuser
 
 WORKDIR /app
 
-COPY --chown=myuser:myuser package.json ./src/app.js webpack.config.js ./
+COPY --chown=myuser:myuser package.json ./src/app.js ./
 
 RUN npm install 
 
