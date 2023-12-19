@@ -4,7 +4,7 @@ RUN adduser -D myuser
 
 WORKDIR /app
 
-COPY --chown=myuser:myuser package.json ./src/app.js ./
+COPY --chown=myuser:myuser package.json app.js ./
 
 RUN npm install 
 
